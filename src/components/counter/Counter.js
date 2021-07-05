@@ -4,17 +4,18 @@ export default class Counter extends Component {
     
          constructor(){
          super()
-         this.state = { name:"Niiaz", age: 45}
+         this.goodMorninng = this.goodMorninng.bind(this);
+         this.state = {clicks:0 }
         
      }
-    metod() {
-        let Hello = "Niiaz"
-        console.log(new Date());
+    goodMorninng() {
+        const numberOfClicks = this.state.clicks;
+        this.setState({clicks:  numberOfClicks + 1 });
     }
 
     render() {
 
-        return <button onClick={this.metod} onDoubleClick={this.click}>{this.state.name}</button>
+        return <button onClick={this.goodMorninng} onDoubleClick={this.click}>{this.state.clicks}</button>
                    
                
     }
